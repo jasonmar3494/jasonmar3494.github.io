@@ -108,6 +108,32 @@
 			$('#home').parallax('50%', 0.1);
 		}
 
+		/* ---------------------------------------------- /*
+		 * Chart 
+		/* ---------------------------------------------- */
+		setTimeout(function start() {
+
+    	$('.bar').each(function (i) {
+        var $bar = $(this);
+        $(this).append('<span class="count"></span>')
+        setTimeout(function () {
+            $bar.css('width', $bar.attr('data-percent'));
+        }, i * 1);
+    	});
+
+    	$('.count').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).parent('.bar').attr('data-percent')
+        }, {
+            duration: 2500,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text((Math.ceil(now) / 10) -5 + ' years');
+            	}
+        	});
+    	});
+
+		}, 500)
 
 		/* ---------------------------------------------- /*
 		 * WOW Animation When You Scroll
