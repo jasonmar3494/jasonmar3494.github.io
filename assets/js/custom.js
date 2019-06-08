@@ -128,7 +128,7 @@
             duration: 2500,
             easing: 'swing',
             step: function (now) {
-                $(this).text((Math.ceil(now) / 10) + ' years');
+                $(this).text((Math.ceil(now) / 10 -2) + ' years');
             	}
         	});
     	});
